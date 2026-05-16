@@ -57,7 +57,6 @@ Key tasks:
 - Applied aggregations, such as `COUNT`, `SUM` & `AVG`
 - Grouped results by attributes such as `team`
 - Applied filtering using `WHERE` & `HAVING`
-- Introduced basic business logic using CASE
 
 ---
 
