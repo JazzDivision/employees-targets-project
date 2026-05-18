@@ -12,7 +12,7 @@ The project reflects a practical approach to handling real-world data issues, in
 ## Data Sources
 
 ### Employees
-- Source: employee data pulled from an Excel spreadsheet
+- Source: employee data pulled from an Excel spreadsheet (names changed to maintain data privacy)
 - Grain: one row per employee
 
 Issues identified:
@@ -99,7 +99,8 @@ When initially checking for duplicate employee records, Pandas flagged rows with
 
 On closer inspection, these were not true duplicates but empty rows introduced by the Excel spreadsheet.  
 
-To resolve this, I:
+To resolve this:
+
 - I removed fully empty rows before running key validation
 - Re-ran duplicate checks to confirm data integrity
 
@@ -108,7 +109,8 @@ To resolve this, I:
 ### Data type inconsistencies
 After cleaning, key columns such as `employee_id` and `start_date` were not in the expected formats.
 
-To fix this, I:
+To fix this:
+
 - Converted `employee_id` from float to integer
 - Parsed date columns into proper date types
 
@@ -120,6 +122,7 @@ This ensured the dataset could be reliably used in SQL.
 On first import, I observed an unexpected row count due to the header being incorrectly treated as data.
 
 I resolved this by:
+
 - Re-importing the dataset with correct header settings
 - Validating row counts after loading
 
