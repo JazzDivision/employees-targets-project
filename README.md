@@ -1,25 +1,25 @@
 # Employees & Targets DE Project
 
 ## Overview
-This project demonstrates a simple data engineering workflow, where raw employee data is cleaned using Python, then modelled and queried in SQL.
 
-The focus was on building reliable, structured data before analysis, carefully deciding on tool usage, and applying core concepts such as relational design, joins, and aggregation.
+This project was developed to simulate a simple data engineering workflow, from raw data ingestion to analysis. Raw employee and target data in csv files were sourced, cleaned in Python, then modelled/queried in SQL.
 
-The project reflects a practical approach to handling real-world data issues, including data quality problems, type inconsistencies, and validation during data loading.
+The focus of this project was to transform raw data into something reliable and structured for analysis, before it can be used to answer business questions such as which teams are exceeding target, average target per employee by team, how many employees there are per team, and so on.
+
+By building this project, I wanted to deepen my understanding of ETL concepts in practice and take a practical approach to handling real-world data issues, such as data quality problems, type inconsistencies, and validation during loading.
 
 ---
 
 ## Data Sources
 
 ### Employees
-- Source: employee data pulled from an Excel spreadsheet (names changed to maintain data privacy)
+- Source: employee data pulled from a shared team spreadsheet (names changed to maintain data privacy)
 - Grain: one row per employee
 
 Issues identified:
   
   - Inconsistent formatting
-  - Missing and duplicate values
-  - Columns not suitable for direct joins
+  - Missing and duplicate values from trailing spreadsheet data
 
 ### Targets
 - Source: Dummy .csv dataset created by me
@@ -38,7 +38,6 @@ Key steps:
 
 - Loaded raw CSV data
 - Removed empty / invalid rows
-- Standardised column formats
 - Handled missing values
 - Ensured a stable primary key (`employee_id`)
 
@@ -53,10 +52,12 @@ Once cleaned, the data was loaded into SQL for modelling and analysis.
 Key tasks:
 
 - Created relational tables
+- Extensive preliminary validation checks i.e. duplicate keys, NULL/blank checks, join compatibility, row counts before & after joins
 - Joined employees and targets using `employee_id`
-- Applied aggregations, such as `COUNT`, `SUM` & `AVG`
+- Applied aggregations such as `COUNT`, `SUM`, `AVG`, `MIN` & `MAX` plus subqueries
 - Grouped results by attributes such as `team`
-- Applied filtering using `WHERE` & `HAVING`
+- Applied filtering using `GROUP BY`, `WHERE` & `HAVING`
+- Categorised data using `CASE`
 
 ---
 
@@ -78,6 +79,20 @@ This approach kept the pipeline simple and ensured each tool was used where it a
 - SQL joins and aggregations
 - Writing clear, readable queries
 - Making pragmatic tool choices (Python vs SQL)
+- Sanity checks in SQL before analysis
+
+---
+
+## Examples of Business Questions Answered
+
+- Which employees were tracking below/above average target
+- Smallest and largest target values per team
+- Number of employees per office
+- Categorising targets into low, medium & high bands
+- Teams with targets above a certain threshold
+- Total target value per team
+
+And so on.
 
 ---
 
@@ -87,6 +102,8 @@ This approach kept the pipeline simple and ensured each tool was used where it a
 - How poor data quality, such as missing values & formatting issues, impacts downstream use  
 - How joins and aggregation interact in SQL  
 - When Python adds value in a pipeline vs when SQL is sufficient
+- Combining functions to create single, powerful queries e.g. CASE and GROUP BY
+- How to take raw data, transform it into something reliable, then load it for analysis
 
 ---
 
