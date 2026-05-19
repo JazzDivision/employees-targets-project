@@ -10,6 +10,22 @@ By building this project, I wanted to deepen my understanding of ETL concepts in
 
 ---
 
+## Data Flow Overview
+
+Raw employees data (CSV)
+        ↓
+Python cleaning (standardisation & validation)
+        ↓
+clean_employees table (SQL-ready dataset)
+        ↓
+Employees & targets relational tables created    
+        ↓
+Validation checks on clean_employees & targets data        
+        ↓
+SQL queries & analysis (INNER JOIN, LEFT JOIN, aggregation, filtering, grouping etc.)
+
+---
+
 ## Data Sources
 
 ### Employees
