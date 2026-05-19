@@ -147,6 +147,6 @@ I resolved this by:
 
 ## Future Improvements
 
-- Introduce time-based analysis for deeper insights (e.g. monthly, quarterly targets etc.)
-- Add automated data validation checks
-- Expand the dataset to better simulate a real-world pipeline
+- Extend the dataset to include time-based data, to explore trends rather than just static totals
+- Structure it more like a repeatable pipeline rather than separate steps
+- In this project, Python acted as the staging layer for data cleaning. However, in a production environment, it may be better handled within the data platform (SQL) itself - for a more repeatable, consolidated structure
