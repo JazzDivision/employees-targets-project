@@ -4,7 +4,7 @@
 
 This project was developed to simulate a simple data engineering workflow, from raw data ingestion to analysis. Raw employee and target data in csv files were sourced, cleaned in Python, then modelled/queried in SQL.
 
-The focus of this project was to transform raw data into something reliable and structured for analysis, before it can be used to answer business questions such as which teams are exceeding target, average target per employee by team, how many employees there are per team, and so on.
+The focus of this project was to transform raw data into something reliable and structured for analysis, so it could later be used in BAU processes like reporting or regular querying.
 
 By building this project, I wanted to deepen my understanding of ETL concepts in practice and take a practical approach to handling real-world data issues, such as data quality problems, type inconsistencies, and validation during loading.
 
